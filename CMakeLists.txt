@@ -1,0 +1,20 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 3.0)
+
+PROJECT(Sockets)
+
+FILE(GLOB all_libs 
+	../boost_1_70_0/_BUILD/lib/*.a
+)
+
+ADD_EXECUTABLE(${PROJECT_NAME}
+
+)
+
+TARGET_INCLUDE_DIRECTORIES(${PROJECT_NAME} PUBLIC
+	../boost_1_70_0/_BUILD/include
+)	
+
+TARGET_LINK_LIBRARIES(${PROJECT_NAME}
+	${all_libs}
+	-lpthread
+)
