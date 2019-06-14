@@ -11,6 +11,7 @@
 	udp::socket socket;
 */
 
+#include <iostream>
 #include <boost/asio.hpp>
 #include <boost/array.hpp>
 #include <boost/bind.hpp>
@@ -20,7 +21,7 @@
 using boost::asio::ip::udp;
 using boost::asio::ip::address;
 
-#define IPADDRESS "127.0.0.1"		// Dirección IP de loopback (Local host): 127.0.0.1
+#define IPADDRESS "127.0.0.1"		// DirecciÃ³n IP de loopback (Local host): 127.0.0.1
 #define UDP_PORT 38252
 
 const int client_bytes = 20;		// Size in bytes of the buffer to store the received data (maximum size of the buffer)

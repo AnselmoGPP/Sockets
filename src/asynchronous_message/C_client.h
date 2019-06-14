@@ -20,6 +20,7 @@
 	socket.close();
 */
 
+#include <iostream>
 #include <boost/asio.hpp>
 #include <boost/array.hpp>
 #include <boost/bind.hpp>
@@ -51,8 +52,8 @@ public:
 	void SendData() {								// Sends the data
 	
 		//string abc = "hello socket";
-		//boost::asio::buffer(abc);					// Va en socket.send_to()		Envía una string
-		//boost::asio::buffer(&data, server_bytes)	// Va en socket.send_to()		Envía un array de X bytes
+		//boost::asio::buffer(abc);					// Va en socket.send_to()		EnvÃ­a una string
+		//boost::asio::buffer(&data, server_bytes)	// Va en socket.send_to()		EnvÃ­a un array de X bytes
 
 		boost::system::error_code err;
 

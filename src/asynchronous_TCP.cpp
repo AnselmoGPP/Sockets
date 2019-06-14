@@ -72,7 +72,7 @@ public:
 
 	void start() {
 		//char message[] = "Hello, client";
-		boost::asio::async_write(	socket_, boost::asio::buffer(message, std::size(message)),
+        boost::asio::async_write(	socket_, boost::asio::buffer(message, message.size()),
 									boost::bind(	&tcp_connection::handle_write, shared_from_this(),
 													boost::asio::placeholders::error,
 													boost::asio::placeholders::bytes_transferred));
@@ -87,7 +87,7 @@ public:
 
 private:
 	void start_accept() {
-		std::shared_ptr<tcp_connection> new_connection = tcp_connection::create(acceptor.get_executor().context());
+        std::shared_ptr<tcp_connection> new_connection = tcp_connection::create(acceptor.get_executor().context());
 
 		acceptor.async_accept(	new_connection->socket(),
 								boost::bind(&tcp_server::handle_accept, this, new_connection, boost::asio::placeholders::error));

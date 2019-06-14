@@ -28,7 +28,7 @@ void send_sync() {
 		udp::socket socket(io_context);
 		socket.open(udp::v4());
 		char message[] = { "- Hi there, server" };
-		socket.send_to(boost::asio::buffer(message, std::size(message)), receiver_endpoint);
+        socket.send_to(boost::asio::buffer(message, 18), receiver_endpoint);
 
 		// ----- RECEIVE -----
 		char recv_buf[C_BUF_SIZE];

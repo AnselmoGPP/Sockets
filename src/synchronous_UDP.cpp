@@ -27,7 +27,7 @@ void client() {
 		udp::socket socket(io_context);
 		socket.open(udp::v4());
 		char message[] = "- Hello, server" ;
-		socket.send_to(boost::asio::buffer(message, std::size(message)), receiver_endpoint);
+        socket.send_to(boost::asio::buffer(message, 15), receiver_endpoint);
 
 		// ----- RECEIVE -----
 		char recv_buf[C_BUF_SIZE];
@@ -48,7 +48,7 @@ void server() {
 			char recv_buf[S_BUF_SIZE];
 			udp::endpoint remote_endpoint;
 			boost::system::error_code error;
-			socket.receive_from(boost::asio::buffer(recv_buf, std::size(recv_buf)), remote_endpoint);
+            socket.receive_from(boost::asio::buffer(recv_buf, S_BUF_SIZE), remote_endpoint);
 			std::cout << recv_buf << std::endl;
 		// ----- SEND -----
 			std::string message = "- Hello, client";

@@ -54,7 +54,7 @@ int server() {
 			// ----- SEND -----
 			char message[] = "- Hello, client";
 			boost::system::error_code ignored_error;
-			boost::asio::write(socket, boost::asio::buffer(message, std::size(message)), ignored_error);
+            boost::asio::write(socket, boost::asio::buffer(message, 15), ignored_error);
 		}
 	}
 	catch (std::exception& e) {	std::cerr << e.what() << std::endl; }
